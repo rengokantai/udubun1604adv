@@ -23,7 +23,12 @@ continue partition: For example,sda ,choose 50gb, beginning->pyisical volume for
 continue partition: choose 99%,....same as above
 
 
-#####5
-configure software RAID ->yes->create MD device->RAID1
+#####6
+configure software RAID ->yes->create MD device->RAID1->Number of active devices:4->1spare  
+choose /dev/sda2 ... /dev/sde2 .. 50G  (sdx is 1 based, not 0 based) as all RAID1 (choose 4 for active, 1 for spare)  
+createMD device, RAID6->4->1-> /dev/sda3 ... /dev/sde3, (99% disk), same as above-->finish,  
+choose use 50GB->use as do not use->physical volume for LVM,done, same as 99%
 
 
+#####7
+config the logical volume manager->yes->create volume group,use /dev/md0,continue
