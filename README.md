@@ -31,4 +31,20 @@ choose use 50GB->use as do not use->physical volume for LVM,done, same as 99%
 
 
 #####7
-config the logical volume manager->yes->create volume group,use /dev/md0,continue
+config the logical volume manager->yes->create volume group,use /dev/md0,continue,create logical volume->set 50G, set 2GB,set2GB,.., usr,boot,var,....  
+for home dict, select 99%, set 3gb
+
+
+#####8
+
+select home dic size, ->do not use->btrfs journaling->mountpoint /home->mount options:noatime,nodev nosuid,noexec->continue->setlabel:home(if not exist in list, type it manually, like /var/cache,label:cache  
+
+for root, only choose noatime  
+spool:/var/spool,choose no no no,  
+swap->swap area,done  
+tmp-> no no no  
+usr->set noatime,nodev
+var->set noatime, nodev,nosuid
+/var/tmp->nodev,nosuid,noexeclabel=vartmp->finish partitioning and write the disk
+
+
