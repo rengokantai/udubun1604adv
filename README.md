@@ -47,4 +47,10 @@ usr->set noatime,nodev
 var->set noatime, nodev,nosuid
 /var/tmp->nodev,nosuid,noexeclabel=vartmp->finish partitioning and write the disk
 
+#####9 install
 
+normal->linux signed generic->generic  
+configure the pkg manager->ye,http->..->use restricted soft?:no->universe:no->multiverse:no->backported software:no->source repo in apt:no  
+select install software->install security->postfix:localonly->  
+install GRUB boot loader->EFI:No  
+finish installation
